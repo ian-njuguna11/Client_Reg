@@ -49,17 +49,20 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="facility">Facility</label>
-                <select name="linked_facility" id="facility" class="form-control">
-                    <option selected disabled>Select facility</option>
-                    <option value='Facility1'>Facility 1</option>
-                    <option value='facility2'>Facility 2</option>
-                </select>
+                <label for="facility">Select Facility</label>
+                <select  name="linked_facility" id="facility" class="form-control">
+                    @foreach ($facility as $facilityOPtionsKey => $facilityOPtionsValue)
+                        <option value="{{ $facilityOPtionsValue }}" {{ $facilityOPtionsValue  ? 'selected' : ''}} >{{ $facilityOPtionsValue }}</option>                                
+                    @endforeach                            
+                 </select>
+                
             </div>
+            
             <div class="form-group col-md-4">
                 <label for="mfl_code">MFL Code</label>
                 <input name="mfl_code" type="text" class="form-control" id="mfl_code" value='' readonly>
             </div>
+            
             <div class="form-group col-md-4">
                 <label for="serial_number">Serial Number</label>
                 <input name="serial_no" type="number" class="form-control" id="serial_number" placeholder="Serial Number">
@@ -75,8 +78,7 @@
                 <label for="county">County</label>
                     <select name="linked_facility" id="facility" class="form-control">
                 @foreach ($patient as $countyOPtionsKey => $countyOPtionsValue)
-                        
-                        <option value="{{ $countyOPtionsValue }}" {{ $countyOPtionsValue  ? 'selected' : ''}} >{{ $countyOPtionsValue }}</option>                                
+                    <option value="{{ $countyOPtionsValue }}" {{ $countyOPtionsValue  ? 'selected' : ''}} >{{ $countyOPtionsValue }}</option>                                
                 @endforeach
                         
                     </select>

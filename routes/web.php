@@ -34,5 +34,6 @@ Route::patch('patient/{id}',[PatientController::class, 'update']);
 
 Route::get('/merger_patient/{id}/{id_no}',[PatientController::class, 'merge']);
 
+Route::get('new_client', [PatientController::class, 'new_client']);
 
-Route::get('new_client', [PatientController::class, 'new_client'])
+

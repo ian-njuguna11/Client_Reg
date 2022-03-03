@@ -28,6 +28,7 @@ class PatientController extends Controller
 
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +59,9 @@ class PatientController extends Controller
     public function new_client(Patient $patient)
     {
         $patient = $this->optionCounty();
-        return view('layouts.new_client', compact('patient'));
+        $facility = $this->optionFacility();
+        
+        return view('layouts.new_client', compact('patient', 'facility'));
         
     }
 
@@ -163,4 +166,6 @@ class PatientController extends Controller
             '62343' => 'kissii_hospital' , 
         ];
     }
+    
+    
 }
